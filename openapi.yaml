@@ -2,4 +2,11 @@ openapi: 3.1.0
 info:
   title: Pokemon API
   version: 0.0.1
-paths: {}
+paths:
+  /pokemon:
+    get:
+      summary: Get pokemon
+      description: Provides basic details on all pokemon
+      responses:
+        "200":
+          description: "OK"
