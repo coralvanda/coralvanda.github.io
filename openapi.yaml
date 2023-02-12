@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Pokemon API
-  version: 0.1.1
+  version: 0.2.0
 paths:
   /pokemon:
     get:
@@ -25,3 +25,14 @@ paths:
                     name:
                       type: string
                       description: The name of this pokemon in the pokedex
+  /pokemon/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The pokedex index number of the target pokemon
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 721
