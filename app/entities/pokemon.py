@@ -27,11 +27,20 @@ class Pokemon:
     legendary: bool
 
     def to_dict(self):
-        dict_form = dataclasses.asdict(self)
-        pokedex_number = dict_form.pop('pokedex_number')
         dict_form = {
-            '#': pokedex_number,
-            **dict_form
+            '#': int(self.pokedex_number),
+            'Name': self.name,
+            'Type 1': self.type_1,
+            'Type 2': self.type_2 if self.type_2 is not None else '',
+            'Total': int(self.total),
+            'HP': int(self.hp),
+            'Attack': int(self.attack),
+            'Defense': int(self.defense),
+            'Sp. Atk': int(self.sp_atk),
+            'Sp. Def': int(self.sp_def),
+            'Speed': int(self.speed),
+            'Generation': int(self.generation),
+            'Legendary': bool(self.legendary)
         }
         return dict_form
 
