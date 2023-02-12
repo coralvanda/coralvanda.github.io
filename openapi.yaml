@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Pokemon API
-  version: 0.0.1
+  version: 0.1.0
 paths:
   /pokemon:
     get:
@@ -10,3 +10,12 @@ paths:
       responses:
         "200":
           description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pokedex-number:
+                    type: integer
+                  name:
+                    type: string
