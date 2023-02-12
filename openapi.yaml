@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Pokemon API
-  version: 0.3.0
+  version: 0.3.1
 paths:
   /pokemon:
     get:
@@ -19,7 +19,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    pokedex-number:
+                    "#":
                       type: integer
                       description: The index number of this pokemon in the pokedex
                     name:
