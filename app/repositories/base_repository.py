@@ -11,7 +11,7 @@ import abc
 
 class BaseRepository(abc.ABC):
     @abc.abstractmethod
-    def get_one(self, id):
+    def get_one(self, poke_id):
         raise NotImplementedError
 
     @abc.abstractmethod
