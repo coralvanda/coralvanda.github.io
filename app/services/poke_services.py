@@ -6,8 +6,10 @@ Notes :
 February 12, 2023
 """
 
+from flask import abort
+
 from typing import List
-from app.services import BaseUnitOfWork
+from app.services.unit_of_work import BaseUnitOfWork
 
 
 def get_single_pokemon(pokedex_number: int, unit_of_work: BaseUnitOfWork) -> str:
