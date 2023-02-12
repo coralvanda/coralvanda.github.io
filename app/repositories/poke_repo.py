@@ -20,5 +20,5 @@ class PokemonRepository(BaseRepository):
         return build_pokemon_from_series(series=selected_pokemon)
 
     def get_all(self):
-        all_pokemon = self.df.apply(build_pokemon_from_series)
+        all_pokemon = self.df.apply(lambda x: build_pokemon_from_series(x), axis=1)
         return all_pokemon
