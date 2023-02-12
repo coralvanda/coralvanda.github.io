@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Pokemon API
-  version: 0.4.0
+  version: 0.4.1
 components:
   schemas:
     Pokemon:
@@ -19,18 +19,32 @@ components:
           type: string
         Total:
           type: integer
+          minimum: 1
+          maximum: 1000
         HP:
           type: integer
+          minimum: 1
+          maximum: 1000
         Attack:
           type: integer
+          minimum: 1
+          maximum: 1000
         Defense:
           type: integer
+          minimum: 1
+          maximum: 1000
         Sp. Atk:
           type: integer
+          minimum: 1
+          maximum: 1000
         Sp. Def:
           type: integer
+          minimum: 1
+          maximum: 1000
         Speed:
           type: integer
+          minimum: 1
+          maximum: 1000
         Generation:
           type: integer
           minimum: 1
