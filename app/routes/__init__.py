@@ -6,4 +6,4 @@ Notes :
 February 12, 2023
 """
 
-from poke_routes import get_one, get_all
+from app.routes.poke_routes import get_one, get_all
