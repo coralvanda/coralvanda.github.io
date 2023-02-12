@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Pokemon API
-  version: 0.5.0
+  version: 0.6.0
 components:
   schemas:
     Pokemon:
@@ -63,7 +63,7 @@ paths:
             application/json:
               schema:
                 type: array
-                minItems: 1
+                minItems: 721
                 maxItems: 721
                 items:
                   $ref: "#/components/schemas/Pokemon"
