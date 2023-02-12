@@ -6,10 +6,11 @@ Notes :
 February 12, 2023
 """
 
-from dataclasses import dataclass
+import dataclasses
+import json
 
 
-@dataclass
+@dataclasses.dataclass
 class Pokemon:
     pokedex_number: int
     name: str
@@ -24,6 +25,19 @@ class Pokemon:
     speed: int
     generation: int
     legendary: bool
+
+    def to_dict(self):
+        dict_form = dataclasses.asdict(self)
+        pokedex_number = dict_form.pop('pokedex_number')
+        dict_form = {
+            '#': pokedex_number,
+            **dict_form
+        }
+        return dict_form
+
+    def to_json(self):
+        dict_form = self.to_dict()
+        return json.dumps(dict_form)
 
 
 def build_pokemon_from_series(series):
