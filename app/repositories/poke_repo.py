@@ -17,7 +17,10 @@ class PokemonRepository(BaseRepository):
 
     def get_one(self, poke_id):
         selected_pokemon = self.df[self.df['#'].eq(poke_id)]
-        return build_pokemon_from_series(series=selected_pokemon)
+        if not selected_pokemon.empty:
+            return build_pokemon_from_series(series=selected_pokemon.iloc[0])
+        else:
+            return ""
 
     def get_all(self):
         all_pokemon = self.df.apply(lambda x: build_pokemon_from_series(x), axis=1)
