@@ -27,4 +27,6 @@ def test_get_single_pokemon_should_abort_if_no_result():
 
 
 def test_get_all_pokemon_should_return_full_list():
-    pass
+    response = poke_services.get_all_pokemon(FakeUnitOfWork())
+
+    assert len(response) == 3
