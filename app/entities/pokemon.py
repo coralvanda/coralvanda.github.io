@@ -8,6 +8,7 @@ February 12, 2023
 
 import dataclasses
 import json
+import pandas
 
 
 @dataclasses.dataclass
@@ -49,7 +50,18 @@ class Pokemon:
         return json.dumps(dict_form)
 
 
-def build_pokemon_from_series(series):
+def build_pokemon_from_series(series: pandas.Series) -> Pokemon:
+    """
+    Converts the series representation of a pokemon from the dataframe database into the Pokemon entity class
+
+    Parameters
+    ----------
+    series: pandas.Series
+
+    Returns
+    -------
+    Pokemon
+    """
     return Pokemon(
         pokedex_number=series['#'],
         name=series['Name'],
