@@ -23,11 +23,11 @@ spec = Spec.from_file_path(os.path.join(
     os.pardir,
     'openapi.yaml')
 )
-openapi = FlaskOpenAPIViewDecorator.from_spec(spec)
+openapi_validator = FlaskOpenAPIViewDecorator.from_spec(spec)
 
 
 @pokemon_app.route('/pokemon')
-@openapi
+@openapi_validator
 def get_all():
     """
     Endpoint to list all pokemon
@@ -41,7 +41,7 @@ def get_all():
 
 
 @pokemon_app.route('/pokemon/<int:id>')
-@openapi
+@openapi_validator
 def get_one(id: int):
     """
     Endpoint to retrieve a single pokemon by ID
